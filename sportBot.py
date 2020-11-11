@@ -7,8 +7,8 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start'])
 def welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard = True)
-    item1 = types.KeyboardButton("💪 Вивчення вправ")
-    markup.add(item1)
+    item = types.KeyboardButton("💪 Вивчення вправ")
+    markup.add(item)
     bot.send_message(message.chat.id, "Привіт, {0.first_name}!\nЯ — <b>{1.first_name}</b>, бот створений, щоб навчити робити вправи правильно.".format(message.from_user, bot.get_me()), parse_mode = 'html', reply_markup = markup)
 
 
